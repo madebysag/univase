@@ -1,0 +1,45 @@
+
+:root {
+    font-size: 14px;
+}
+
+.hero-container {
+    width: 90%;
+    height: 75%;
+}
+
+.hero-container > h1 {
+    font-weight: 100;
+    font-size: 2.5rem;
+    color: var(--white);
+    margin: 15% 0 0 15%;
+}
+
+.hero-container > h1:nth-child(2) {
+    margin: -1rem 0 0 25%;
+}
+
+.spining-art{
+    margin: 0rem 0 0 20%;
+}
+
+.product-gallery {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(2, 10rem);
+    grid-template-rows: repeat(8, 10rem);
+    grid-template-areas:
+        'a a'
+        'b b'
+        'c c'
+        'c c'
+        'd d'
+        'e f'
+        'e f'
+        'g g';
+    margin: 2rem;
+}
+
+section.gallery  p {
+    text-align: center;
+}
