@@ -51,7 +51,7 @@ body {
 }
 
 .body-container {
-    max-width: minmax(100vw, 1500px);
+    width: minmax(100vw, 1500px);
     margin: 0 auto;
 }
 
@@ -165,7 +165,6 @@ section.featured,
 section.gallery
  {
     height: fit-content;
-/*    overflow-x: hidden;*/
 }
 
 section.featured > h3,
@@ -181,24 +180,27 @@ section.gallery > h3
 .carousel-container {
     width: 100%;
     position: relative;
-    border: red solid 2px;
+    overflow: hidden;
 }
 
 .carousel {
-/*    width: fit-content;*/
-/*    overflow-x: visible;*/
+    width: fit-content;
+    overflow: visible;
     display: flex;
     flex-wrap: nowrap;
-    position: sticky;
-    top: 10px;
-    background: red;
+    position: absolute;
+    padding: 10rem 10rem 5rem;
 }
 
 .product {
     flex: 0 0 15rem;
     text-align: center;
-    margin-left: 5rem;
+    margin-right: 5rem;
 }
+
+/*.product:first-child {
+    margin-left: 10rem;
+}*/
 
 .product > .img-container {
     position: relative;

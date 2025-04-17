@@ -4,32 +4,23 @@ const horizontalSection = document.querySelector(".carousel");
 
 const widthDiff = horizontalSection.scrollWidth - horizontalSectionContainer.clientWidth;
 
-horizontalSectionContainer.style.height = horizontalSectionContainer.clientHeight + widthDiff + "px";
 
-console.log(widthDiff)
-console.log(horizontalSection.scrollWidth)
-console.log(horizontalSectionContainer.scrollWidth)
+horizontalSectionContainer.style.height = horizontalSectionContainer.clientHeight + (horizontalSection.clientHeight * 2) + widthDiff + "px";
 
-const options = {
-	threshold: 1
-}
-const observer = new IntersectionObserver(scroll, options)
 
-observer.observe(horizontalSection)
 
-function scroll(entries) {
 
-	entries.forEach(entry => {
-		if (entry.isIntersecting) {
-			console.log(entry)
+window.addEventListener("scroll", e => {
 
-			window.addEventListener("scroll", handleScroll)
-		} 
-	})
-}
+	const currentScrollY = window.scrollY + window.innerHeight,
+		  containerOffsetTop = horizontalSection.clientHeight + horizontalSectionContainer.offsetTop,
+		  scrollYOffsetDiff =  currentScrollY - containerOffsetTop;
 
-function handleScroll(e) {
-	horizontalSection.style.transform = `translate3D( ${-horizontalSection.offsetTop}px, 0px, 0px)`
+	const isIntersecting = (scrollYOffsetDiff > 0) && (scrollYOffsetDiff < (horizontalSectionContainer.clientHeight - horizontalSection.clientHeight)) 
 
-	console.log(horizontalSection.offsetTop)
-}
+	if (isIntersecting) {
+
+		horizontalSection.style.transform = `translate3D( ${-scrollYOffsetDiff}px, ${scrollYOffsetDiff}px, 0px)`
+
+	} 
+})

@@ -23,6 +23,10 @@
     margin: 0rem 0 0 20%;
 }
 
+.carousel{
+    padding: 8rem 8rem 10rem;
+}
+
 .product-gallery {
     display: grid;
     grid-gap: 0.5rem;
