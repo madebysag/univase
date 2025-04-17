@@ -20,7 +20,16 @@ window.addEventListener("scroll", e => {
 
 	if (isIntersecting) {
 
-		horizontalSection.style.transform = `translate3D( ${-scrollYOffsetDiff}px, ${scrollYOffsetDiff}px, 0px)`
+		horizontalSection.animate([
+			//Keyframes
+			{transform:  `translate3D( ${-scrollYOffsetDiff}px, ${scrollYOffsetDiff}px, 0px) skew(${(scrollYOffsetDiff /horizontalSectionContainer.clientHeight) * 2}deg)`}
+		],
+		{
+			duration: 200,
+			fill: "forwards",
+			easing: "ease-in"
 
+		})
 	} 
 })
+
