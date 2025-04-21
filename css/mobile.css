@@ -1,6 +1,13 @@
 
 :root {
-    font-size: 14px;
+    font-size: 10px;
+}
+
+.cart {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 90%;
+    min-height: 100%;
 }
 
 .hero-container {
@@ -46,4 +53,8 @@
 
 section.gallery  p {
     text-align: center;
+}
+
+.search {
+    margin: 10vh auto 1rem;
 }
