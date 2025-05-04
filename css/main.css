@@ -73,6 +73,20 @@ body {
     margin: 5% auto;
     width: 80%;
     height: 80%;
+    position: relative;
+}
+
+.close-modal {
+    text-align: center;
+    height: 2rem;
+    width: 2rem;
+    font-weight: 100;
+    border-radius: 50%;
+    border: var(--brown-border);
+    background: var(--brown-gradient);
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
 }
 
 .cart {
@@ -212,6 +226,44 @@ body {
 .checkout-btn:hover {
     transform: scale(1.05);
     background: linear-gradient(#ddd5cb, #ae9f8a);
+}
+
+
+.cart-btn {
+    background: var(--brown-gradient);
+    border: var(--brown-border);
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    position: fixed;
+    bottom: 16vh;
+    right: 50%;
+    z-index: 100;
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.2));
+    transform: translateX(50%);
+    transition: transform .2s var(--ease);
+}
+
+.cart-btn:hover {
+    background: linear-gradient(#ddd5cb, #ae9f8a);
+    transform: translateX(50%) scale(1.05);
+}
+
+.cart-btn > img {
+    width: 60%;
+}
+
+.cart-btn > .badge {
+    position: absolute;
+    top: -0.7rem;
+    right: 0rem;
+    background: var(--white);
+    border: var(--brown-border);
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    font: 400 0.8rem Noto-Sans;
+    text-align: center;
 }
 
 /* 

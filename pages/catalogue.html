@@ -42,42 +42,6 @@
             margin: 3rem 2rem !important;
         }
 
-        .cart {
-            background: var(--brown-gradient);
-            border: var(--brown-border);
-            border-radius: 50%;
-            height: 3rem;
-            width: 3rem;
-            position: fixed;
-            bottom: 16vh;
-            right: 50%;
-            z-index: 100;
-            filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.2));
-            transform: translateX(50%);
-            transition: transform .2s var(--ease);
-        }
-
-        .cart:hover {
-            background: linear-gradient(#ddd5cb, #ae9f8a);
-            transform: translateX(50%) scale(1.05);
-        }
-
-        .cart > img {
-            width: 60%;
-        }
-
-        .cart > .badge {
-            position: absolute;
-            top: -0.7rem;
-            right: 0rem;
-            background: var(--white);
-            border: var(--brown-border);
-            border-radius: 50%;
-            height: 1.5rem;
-            width: 1.5rem;
-            font: 400 0.8rem Noto-Sans;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -91,7 +55,7 @@
                 <input type="text" placeholder="Search...">
             </div>
 
-            <button class="cart"><img src="../static/images/cart.svg" alt=""><span class="badge">4</span></button>
+            <button class="cart-btn" hidden ><img src="../static/images/cart.svg" alt=""><span class="badge">4</span></button>
 
             <section class="catalogue-container">
                 <div class="catalogue">
