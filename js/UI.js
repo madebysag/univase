@@ -27,8 +27,9 @@ class UI {
 		const container = this.DOMElements.horizontalSectionContainer.children[0]
 		
 		for (let product of Store) {
+
 			container.innerHTML += `
-				<div class="product">
+				<div class="product" data-product='${JSON.stringify(product)}'>
                     <div class="img-container">
                         <img src=${product.pic} alt="">
                         <button class="view-btn">
@@ -60,7 +61,7 @@ class UI {
         // Clear the contents first
 		this.DOMElements.modalContainer.querySelector(".cart-items").innerHTML = "";
 
-		for (let product in Cart.products) {
+		for (let product of Cart.products) {
 			this.DOMElements.modalContainer.querySelector(".cart-items").innerHTML += `
 				<div class="item">
 
@@ -83,7 +84,7 @@ class UI {
 			totalPrice += product.price;
 		}
 
-		this.DOMElements.modalContainer.querySelector(".cart-total-price h3").innerHTML = totalPrice
+		this.DOMElements.modalContainer.querySelector(".cart-total-price h3").innerHTML = "$" + totalPrice
 	}
 
 	showCart(){
@@ -100,9 +101,13 @@ class UI {
 			{opacity: 0, bottom: "0vh"},
 			{opacity: 1, bottom: "16vh"}
 		], {
-			duration: 100,
+			duration: 200,
 			ease: "ease-in",
 		})
+	}
+
+	updateCartBagde() {
+		this.DOMElements.cartBtn.querySelector(".badge").innerHTML = Cart.products.length;
 	}
 
 	hideCartIcon() {
@@ -111,7 +116,7 @@ class UI {
 			{opacity: 1, bottom: "16vh"},
 			{opacity: 0, bottom: "0vh"}
 		], {
-			duration: 100,
+			duration: 200,
 			ease: "ease-in",
 		})
 	}
@@ -124,7 +129,7 @@ class UI {
 			{opacity: 0},
 			{opacity: 1}
 		], {
-			duration: 100,
+			duration: 200,
 			ease: "ease-in",
 		})
 	}
