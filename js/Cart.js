@@ -14,7 +14,14 @@ class Cart {
 			}
 		}
 
-		if (!isPresent) this.products.push(product)
+		if (!isPresent) {
+
+			// Default count to one
+			product.count = new Counter;
+
+			// Add it to Cart
+			this.products.push(product)
+		}
 		
 	}
 	remove(product) {
@@ -23,8 +30,32 @@ class Cart {
 	clear() {
 		this.products = []
 	}
+	calculateTotal() {
+
+		let total = 0;
+		for (let product of this.products) {
+			total += product.price * product.count.value;
+		}
+
+		return total;
+	}
+
 }
 
+
+class Counter {
+	constructor() {
+		this.value = 1;
+	}
+
+	increase() {
+		this.value++
+	}
+
+	decrease(){
+		this.value > 1 ? this.value-- : this.value;
+	}
+}
 export default new Cart()
 
 // Inside Cart, a product = {

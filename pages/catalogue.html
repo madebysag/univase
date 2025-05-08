@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link media="only screen and (max-device-width: 480px)" href="../css/mobile.css" type="text/css" rel="stylesheet" />
-    <!-- <script defer type="module" src="../js/index.js"></script> -->
+    <script defer type="module" src="/app.js"></script>
     <title>Catalogue</title>
     <style>
         :root {
@@ -55,169 +55,44 @@
                 <input type="text" placeholder="Search...">
             </div>
 
-            <button class="cart-btn" hidden ><img src="../static/images/cart.svg" alt=""><span class="badge">4</span></button>
+            <!-- Cart Modal  -->
+            <div class="modal-container" hidden>
+                <div class="modal">
+                    <div class="close-modal">x</div>
+                    <div class="cart">
+                        <h3>
+                            <img src="./static/images/cart.svg" alt="Cart-Icon">
+                            <span> | Cart</span>
+                        </h3>
+                        <div class="cart-headings">
+                            <small>PRODUCT</small>
+                            <small>COUNT</small>
+                            <small>PRICE</small>
+                        </div>
+
+                        <div class="cart-items">
+                            <h3 style="text-align: center;"><em>Nothing here yet...</em></h3>
+                        </div>
+                        
+                        <div class="cart-price-container">
+                            <div class="cart-total-price">
+                                <small>TOTAL:</small>
+                                <h3>$0</h3>
+                            </div>
+
+                            <button class="checkout-btn">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Icon -->
+            <button class="cart-btn" hidden ><img src="../static/images/cart.svg" alt=""><span class="badge">0</span></button>
 
             <section class="catalogue-container">
                 <div class="catalogue">
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price First</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        
-                        <div class="product">
-                            <div class="img-container">
-                                <img src="../static/images/vase1.jpg" alt="">
-                                <button class="view-btn">
-                                    <span>View 3D</span>
-                                    <img src="../static/images/arrow.svg" alt="">
-                                </button>
-                            </div>
-                            <h3>Product Name</h3>
-                            <h1>$Price Last</h1>
-                            <button class="btn-main" type="button">Add to Cart</button>
-                        </div>
-                        
-                        <div class="product">
-                            <button class="load-more">Load More</button>
-                        </div>
-                        
-                </div>
+                    <!-- to be build by js -->
+                 </div>
             </section>
     
         </main>

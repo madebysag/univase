@@ -4,27 +4,37 @@ import Cart from "./Cart.js"
 import HorizontalSmoothScroll from "./HorizontalSmoothScroll.js"
 
 class UI {
-	constructor () {
+	constructor() {
 		this.DOMElements = {
 			horizontalSectionContainer: document.querySelector(".carousel-container"),
 			modalContainer: document.querySelector(".modal-container"),
 			cartBtn: document.querySelector(".cart-btn"),
+			catalogueContainer: document.querySelector(".catalogue-container")
 		}
+		
+		if (this.DOMElements.horizontalSectionContainer) this.initHomePage()
+		else this.buildFeaturedSection(this.DOMElements.catalogueContainer.children[0])
 
+		 // this.initHomePage()
+	}
+
+	initHomePage() {
 		this.horizontalSmoothScroll = new HorizontalSmoothScroll(this.DOMElements.horizontalSectionContainer)
 
-		this.buildFeaturedSection()
+		this.buildFeaturedSection(this.DOMElements.horizontalSectionContainer.children[0], true)
 
 
 		window.addEventListener("resize", () => {
 
 			this.horizontalSmoothScroll.calculateContainerHeight()
 		})
-
 	}
 
-	buildFeaturedSection() {
-		const container = this.DOMElements.horizontalSectionContainer.children[0]
+	initCataloguePage() {
+		this.buildFeaturedSection(this.DOMElements.catalogueContainer.children[0])
+	}
+	buildFeaturedSection(container, horizontalSection = false) {
+		// const container = this.DOMElements.horizontalSectionContainer.children[0]
 		
 		for (let product of Store) {
 
@@ -50,7 +60,7 @@ class UI {
             </div>
 		`
 
-		this.horizontalSmoothScroll.calculateContainerHeight()
+		if (horizontalSection) this.horizontalSmoothScroll.calculateContainerHeight()
 	}
 
 	// Build the contents of Cart
@@ -62,29 +72,35 @@ class UI {
 		this.DOMElements.modalContainer.querySelector(".cart-items").innerHTML = "";
 
 		for (let product of Cart.products) {
+
 			this.DOMElements.modalContainer.querySelector(".cart-items").innerHTML += `
 				<div class="item">
 
                     <div>
                         <img src="${product.pic}" alt="" class="item-pic">
-                        <small>${product.name}</small>
+                        <small class="item-name">${product.name}</small>
                     </div>
 
                     <div class="counter">
-                        <button>+</button>
-                        <span>3</span>
-                        <button>-</button>
+                        <button class="plus">+</button>
+                        <span>${product.count.value}</span>
+                        <button class="minus">-</button>
                     </div>
 
                     <div class="item-price">${product.price}</div>
 
                 </div>
 			`
-
-			totalPrice += product.price;
 		}
 
+		totalPrice = Cart.calculateTotal()
+
 		this.DOMElements.modalContainer.querySelector(".cart-total-price h3").innerHTML = "$" + totalPrice
+	}
+
+	updateCartItemCount(itemInCart, UIElement){
+		UIElement.innerHTML = itemInCart.count.value
+		this.DOMElements.modalContainer.querySelector(".cart-total-price h3").innerHTML = "$" + Cart.calculateTotal()
 	}
 
 	showCart(){
@@ -139,7 +155,7 @@ class UI {
 	}
 }
 
-export default new UI()
+export default new UI();
 
 
 // TODOS 
