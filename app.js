@@ -7,6 +7,7 @@ import Cart from "./js/Cart.js"
 const addToCartBtns = document.querySelectorAll(".add-to-cart")
 const cartBtn = document.querySelector(".cart-btn")
 const modalCloseBtn = document.querySelector(".close-modal")
+const modalClearBtn = document.querySelector(".clear-cart")
 const modalContainer = document.querySelector(".modal-container")
 
 const cartItems = document.querySelectorAll(".cart-items .item")
@@ -38,6 +39,13 @@ modalContainer.addEventListener("click", (e)=> {
 	// Hide the Modal
 	if (e.target == modalContainer || e.target == modalCloseBtn) {
 		UI.hideCart()
+	}
+
+	// Clear Cart
+	if (e.target == modalClearBtn) {
+		Cart.clear()
+		UI.buildCart()
+		UI.updateCartBagde()
 	}
 
 	// Increase count logic
