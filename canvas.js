@@ -38,6 +38,17 @@ document.addEventListener("imgsLoaded", (e) => {
 
 })
 
+// Check is we scrolling up or down
+
+let scrollDelta = 1,
+	previousScroll = window.scrollY;
+
+window.addEventListener("scroll", e => {
+	scrollDelta = window.scrollY - previousScroll;
+
+	previousScroll = window.scrollY;
+})
+
 
 
 const slice = Math.PI * 2 / imgsCount
@@ -77,7 +88,7 @@ function render(width, height) {
 
 		time = now;
 
-		incrementFactor += delta * 0.0001;
+		scrollDelta > 0 ? incrementFactor += delta * 0.0001 : incrementFactor -= delta * 0.0001
 
 		render(size.width, size.height)
 
