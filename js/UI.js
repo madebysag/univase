@@ -8,6 +8,7 @@ class UI {
 		this.DOMElements = {
 			horizontalSectionContainer: document.querySelector(".carousel-container"),
 			modalContainer: document.querySelector(".modal-container"),
+			_3DModalContainer: document.querySelector("._3D-modal-container"),
 			cartBtn: document.querySelector(".cart-btn"),
 			catalogueContainer: document.querySelector(".catalogue-container")
 		}
@@ -56,7 +57,7 @@ class UI {
 
 		container.innerHTML += `
 			<div class="product">
-                <button class="load-more">Load More</button>
+                <button class="load-more">More is Coming Soon...</button>
             </div>
 		`
 
@@ -109,6 +110,14 @@ class UI {
 
 	hideCart(){
 		this._hideElement(this.DOMElements.modalContainer)
+	}
+
+	show3DModal(){
+		this._showElement(this.DOMElements._3DModalContainer)
+	}
+
+	hide3DModal(){
+		this._hideElement(this.DOMElements._3DModalContainer)
 	}
 
 	showCartIcon() {

@@ -12,6 +12,10 @@ const modalContainer = document.querySelector(".modal-container")
 
 const cartItems = document.querySelectorAll(".cart-items .item")
 
+// 3D vars
+const view3DBtns = document.querySelectorAll(".view-btn")
+const _3DModalContainer = document.querySelector("._3D-modal-container")
+
 // Initialize Homepage
 // const UI = new UIHandler()
 
@@ -30,6 +34,7 @@ addToCartBtns.forEach( btn => {
 cartBtn.addEventListener("click", ()=> {
 	UI.showCart()
 })
+
 
 /**
  * Event Delegation should save the day!!
@@ -88,4 +93,22 @@ modalContainer.addEventListener("click", (e)=> {
 		UI.updateCartItemCount(itemInCart, e.target.previousElementSibling)
 	}
 	
+})
+
+
+// Handling 3D scene
+view3DBtns.forEach( btn => {
+	btn.addEventListener("click", (e)=> {
+		UI.show3DModal()
+
+		// const product = JSON.parse(e.target.parentElement.dataset.product)
+
+		// Cart.add(product)
+		// UI.buildCart()
+		// UI.updateCartBagde()
+	})
+})
+
+_3DModalContainer.addEventListener("click", (e)=> {
+	UI.hide3DModal()
 })

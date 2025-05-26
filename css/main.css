@@ -58,7 +58,8 @@ body {
 /*
     modals
 */
-.modal-container {
+.modal-container,
+._3D-modal-container {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -69,7 +70,8 @@ body {
     left: 0;
 }
 
-.modal {
+.modal,
+._3D-modal {
     background: var(--white);
     border-radius: 10px;
     border: var(--brown-border);
