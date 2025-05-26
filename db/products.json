@@ -2,67 +2,67 @@
 	{
 		"name": "The Star Fish",
 		"price": 330,
-		"pic": "/static/images/vase1.jpg",
+		"pic": "./static/images/vase1.jpg",
 		"model": null
 	},
 	{
 		"name": "Tear Drop",
 		"price": 250,
-		"pic": "/static/images/vase2.jpg",
+		"pic": "./static/images/vase2.jpg",
 		"model": null
 	},
 	{
 		"name": "The Gong",
 		"price": 300,
-		"pic": "/static/images/vase3.jpg",
+		"pic": "./static/images/vase3.jpg",
 		"model": null
 	},
 	{
 		"name": "Olden Flask",
 		"price": 290,
-		"pic": "/static/images/vase4.jpg",
+		"pic": "./static/images/vase4.jpg",
 		"model": null
 	},
 	{
 		"name": "Vanilla",
 		"price": 230,
-		"pic": "/static/images/vase5.jpg",
+		"pic": "./static/images/vase5.jpg",
 		"model": null
 	},
 	{
 		"name": "Bullb Lamp",
 		"price": 300,
-		"pic": "/static/images/vase6.jpg",
+		"pic": "./static/images/vase6.jpg",
 		"model": null
 	},
 	{
 		"name": "The Nnpurmin",
 		"price": 270,
-		"pic": "/static/images/vase7.jpg",
+		"pic": "./static/images/vase7.jpg",
 		"model": null
 	},
 	{
 		"name": "Tapered Tip",
 		"price": 300,
-		"pic": "/static/images/vase8.jpg",
+		"pic": "./static/images/vase8.jpg",
 		"model": null
 	},
 	{
 		"name": "The Triangular",
 		"price": 300,
-		"pic": "/static/images/vase9.jpg",
+		"pic": "./static/images/vase9.jpg",
 		"model": null
 	},
 	{
 		"name": "Acient Drum",
 		"price": 350,
-		"pic": "/static/images/vase10.jpg",
+		"pic": "./static/images/vase10.jpg",
 		"model": null
 	},
 	{
 		"name": "Wobbly Worm",
 		"price": 250,
-		"pic": "/static/images/vase11.jpg",
+		"pic": "./static/images/vase11.jpg",
 		"model": null
 	}
 
