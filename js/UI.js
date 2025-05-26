@@ -44,7 +44,7 @@ class UI {
                         <img src=${product.pic} alt="">
                         <button class="view-btn">
                             <span>View 3D</span>
-                            <img src="../static/images/arrow.svg" alt="">
+                            <img src="./static/images/arrow.svg" alt="">
                         </button>
                     </div>
                     <h3>${product.name}</h3>

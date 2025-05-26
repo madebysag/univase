@@ -20,7 +20,7 @@ const imgsLoaded = new Event("imgsLoaded")
 for (let i = 0; i <= imgsCount; i++) {
 	const img = new Image()
 	const index = Math.floor(Math.random() * imgsCount)	// random img out of store
-	img.src = "." + Store[index].pic
+	img.src = Store[index].pic
 
 	img.onload = () => {
 
