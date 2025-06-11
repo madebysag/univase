@@ -1,7 +1,7 @@
 import Store from "./Store.js"
 class Cart {
 	constructor () {
-		this.products = [] // what am I cooking......;
+		this.products = []; // what am I cooking......;
 	}
 
 	add(product) {

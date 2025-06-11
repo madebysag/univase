@@ -1,10 +1,10 @@
 async function loadProducts() {
 
 	try{
-		const response = await fetch("./db/products.json")
+		const response = await fetch("./db/products.json");
 
 		if (!response.ok) {
-			throw new Error("Could not fetch data. Response Status: \n" + response.status)
+			throw new Error("Could not fetch data. Response Status: \n" + response.status);
 		} 
 		
 		const json = response.json();
@@ -18,6 +18,6 @@ async function loadProducts() {
 
 }
 
-const Store = await loadProducts() 
+const Store = await loadProducts();
 
 export default Store;
