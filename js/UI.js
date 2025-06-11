@@ -49,7 +49,7 @@ class UI {
                         </button>
                     </div>
                     <h3>${product.name}</h3>
-                    <h1>${product.price}</h1>
+                    <h1>$${product.price}</h1>
                     <button class="btn-main add-to-cart" type="button">Add to Cart</button>
                 </div>
 			`
@@ -88,7 +88,7 @@ class UI {
                         <button class="minus">-</button>
                     </div>
 
-                    <div class="item-price">${product.price}</div>
+                    <div class="item-price">$${product.price}</div>
 
                 </div>
 			`

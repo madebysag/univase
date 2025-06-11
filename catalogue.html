@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link media="only screen and (max-device-width: 480px)" href="../css/mobile.css" type="text/css" rel="stylesheet" />
+    <script defer type="module" src="/app.js"></script>
+    <title>Catalogue</title>
+    <style>
+        :root {
+        --brown-border: solid 1px #9A8766;
+        --brown: #9A8766;
+        --brown-dark: #3d372c;
+        --brown-gradient: linear-gradient(#ae9f8a, #ddd5cb);
+        --white: #f5f5f5;
+        --ease: cubic-bezier(1,-0.5, 0.5, 1.5);
+        }
+
+        .search {
+            max-width: 20rem;
+            margin: 16vh auto 1rem;
+        }
+        .search > input[type=text] {
+            width: 100%;
+            border: var(--brown-border);
+            border-radius: 10px;
+            padding: 10px 20px;
+            font: 400 1.2rem Noto-Sans;
+            text-align: center;
+        }
+
+        .catalogue {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .product {
+            margin: 3rem 2rem !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="body-container">
+
+        <header>Univase | Catalogue</header>
+
+        <main>
+
+            <div class="search">
+                <input type="text" placeholder="Search...">
+            </div>
+
+            <!-- Cart Modal  -->
+            <div class="modal-container" hidden>
+                <div class="modal">
+                    <div class="clear-cart" title="Clear Cart"></div>
+                    <div class="close-modal" title="Close"></div>
+                    <div class="cart">
+                        <h3>
+                            <img src="./static/images/cart.svg" alt="Cart-Icon">
+                            <span> | Cart</span>
+                        </h3>
+                        <div class="cart-headings">
+                            <small>PRODUCT</small>
+                            <small>COUNT</small>
+                            <small>PRICE</small>
+                        </div>
+
+                        <div class="cart-items">
+                            <h3 style="text-align: center;"><em>Nothing here yet...</em></h3>
+                        </div>
+                        
+                        <div class="cart-price-container">
+                            <div class="cart-total-price">
+                                <small>TOTAL:</small>
+                                <h3>$0</h3>
+                            </div>
+
+                            <button class="checkout-btn">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- cart btn -->
+            <button class="cart-btn" hidden ><img src="./static/images/cart.svg" alt=""><span class="badge">0</span></button>
+
+            <!-- 3D Modal -->
+            <div class="_3D-modal-container" hidden>
+                <div class="_3D-modal">
+                    <h3>Individual Product 3D Scene Comming Soon?? <br /> For now, enjoy the all products scene</h3>
+                    <a href="https://madebysag.github.io/univase-3d-scene/" target="blank" class="btn-main"> View 3D Scene</a>
+                </div>
+            </div>
+
+            <section class="catalogue-container">
+                <div class="catalogue">
+                    <!-- to be build by js -->
+                 </div>
+            </section>
+    
+        </main>
+
+    
+        <footer>
+            <p><strong>MADE BY SAG</strong></p>
+            <div class="links">
+                <a href="">Instagram</a>
+                <span class="circle"></span>
+                <a href="">Twitter</a>
+                <span class="circle"></span>
+                <a href="">Email</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+

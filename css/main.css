@@ -81,6 +81,14 @@ body {
     position: relative;
 }
 
+._3D-modal {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .close-modal,
 .clear-cart {
     padding: 5px 10px;
@@ -381,6 +389,7 @@ section.featured {
     margin-top: 1.5rem;
     transition: 0.2s var(--ease);
     transition-property: background, transform ;
+    text-decoration: none;
 }
 
 .btn-home{
