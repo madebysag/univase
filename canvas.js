@@ -17,19 +17,23 @@ const imgsCount = 8
 
 const imgsLoaded = new Event("imgsLoaded")
 
-for (let i = 0; i <= imgsCount; i++) {
-	const img = new Image()
-	const index = Math.floor(Math.random() * imgsCount)	// random img out of store
-	img.src = Store[index].pic
+Store.then(products => {
 
-	img.onload = () => {
+	for (let i = 0; i <= imgsCount; i++) {
+		const img = new Image()
+		const index = Math.floor(Math.random() * imgsCount)	// random img out of store
+		img.src = products[index].pic
 
-		imgs.push(img);
+		img.onload = () => {
 
-		// Fire Event when all images are loaded
-		if (imgs.length == imgsCount) document.dispatchEvent(imgsLoaded) 
+			imgs.push(img);
+
+			// Fire Event when all images are loaded
+			if (imgs.length == imgsCount) document.dispatchEvent(imgsLoaded) 
+		}
 	}
-}
+})
+
 
 // When all Imgaes are loaded
 document.addEventListener("imgsLoaded", (e) => {
@@ -94,7 +98,3 @@ function render(width, height) {
 
 	})
 }
-
-
-// ctx.fillRect(0, 0, width, height)
-// console.log(height, width)

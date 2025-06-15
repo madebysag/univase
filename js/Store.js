@@ -18,6 +18,10 @@ async function loadProducts() {
 
 }
 
-const Store = await loadProducts();
+// Store here is a promise, to be used with then() method
+const Store = (async function() {
+	const p = await loadProducts()
+	return p;
+})()
 
 export default Store;

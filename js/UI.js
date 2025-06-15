@@ -34,34 +34,37 @@ class UI {
 	initCataloguePage() {
 		this.buildFeaturedSection(this.DOMElements.catalogueContainer.children[0])
 	}
+	
 	buildFeaturedSection(container, horizontalSection = false) {
-		// const container = this.DOMElements.horizontalSectionContainer.children[0]
-		
-		for (let product of Store) {
+
+		Store.then(products => {
+
+			for (let product of products) {
+
+				container.innerHTML += `
+					<div class="product" data-product='${JSON.stringify(product)}'>
+	                    <div class="img-container">
+	                        <img src=${product.pic} alt="">
+	                        <button class="view-btn">
+	                            <span>View 3D</span>
+	                            <img src="./static/images/arrow.svg" alt="">
+	                        </button>
+	                    </div>
+	                    <h3>${product.name}</h3>
+	                    <h1>$${product.price}</h1>
+	                    <button class="btn-main add-to-cart" type="button">Add to Cart</button>
+	                </div>
+				`
+			}
 
 			container.innerHTML += `
-				<div class="product" data-product='${JSON.stringify(product)}'>
-                    <div class="img-container">
-                        <img src=${product.pic} alt="">
-                        <button class="view-btn">
-                            <span>View 3D</span>
-                            <img src="./static/images/arrow.svg" alt="">
-                        </button>
-                    </div>
-                    <h3>${product.name}</h3>
-                    <h1>$${product.price}</h1>
-                    <button class="btn-main add-to-cart" type="button">Add to Cart</button>
-                </div>
+				<div class="product">
+	                <button class="load-more">More is Coming Soon...</button>
+	            </div>
 			`
-		}
 
-		container.innerHTML += `
-			<div class="product">
-                <button class="load-more">More is Coming Soon...</button>
-            </div>
-		`
-
-		if (horizontalSection) this.horizontalSmoothScroll.calculateContainerHeight()
+			if (horizontalSection) this.horizontalSmoothScroll.calculateContainerHeight()
+		})
 	}
 
 	// Build the contents of Cart

@@ -1,4 +1,3 @@
-import Store from "./Store.js"
 class Cart {
 	constructor () {
 		this.products = []; // what am I cooking......;
@@ -57,10 +56,3 @@ class Counter {
 	}
 }
 export default new Cart()
-
-// Inside Cart, a product = {
-// 	name,
-// 	pic,
-// 	count,
-// 	price
-// }
